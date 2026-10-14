@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CarInsurance.Models.Insuree>
+
+@{
+    ViewData["Title"] = "Insurance Quote Admin";
+}
+
+<h1>Insurance Quote Admin</h1>
+
+<p>All insurance quotes issued.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Monthly Quote</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var insuree in Model)
+        {
+            <tr>
+                <td>@insuree.FirstName</td>
+                <td>@insuree.LastName</td>
+                <td>@insuree.EmailAddress</td>
+                <td>@insuree.Quote.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
